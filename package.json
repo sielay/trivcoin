@@ -1,0 +1,33 @@
+{
+  "name": "trivcoin",
+  "version": "0.0.1-rc.1",
+  "licence": "MIT",
+  "author": {
+    "name": "Łukasz Marek Sielski",
+    "email": "lukaszsielski@gmail.com",
+    "url": "https://github.com/sielay"
+  },  
+  "dependencies": {
+    "colors": "^1.1.2",
+    "commander": "^2.12.2",
+    "ed25519": "^0.0.4",
+    "jasmine": "^2.8.0",
+    "prompt": "^1.0.0",
+    "swagger-ui-express": "^2.0.13",
+    "ursa": "^0.9.4",
+    "x11-hash-js": "^1.0.0"
+  },
+  "repository": {
+  "type": "git",
+  "url": "git@github.com:sielay/trivcoin.git"    
+  },
+  "main": "lib/index.js",
+  "bin": "bin/trivcoin",
+  "resolutions": {
+    "colors": "1.1.2",
+    "pkginfo": "0.4.1",
+    "async": "1.0.0",
+    "setprototypeof": "1.1.0",
+    "statuses": "1.4.0"
+  }
+}

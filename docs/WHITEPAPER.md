@@ -49,7 +49,7 @@ const reward = Math.floor((7 * STAKE * 5%)/365)
 ```
 
 Days |	1,000 |	10,000	| 100,000 |	1,000,000
-==== | ====== | ======= | ======= | =========
+---- | ------ | ------- | ------- | --------
 7	   | 1	    | 11	    | 115	    | 1,150 
 14	 | 2	    | 23      |	230	    | 2,301
 21	 | 3	    | 34	    | 345	    | 3,452
@@ -166,7 +166,7 @@ Example based on [NaiveCoin](https://github.com/conradoqg/naivecoin#transaction-
 ### Transaction Types
 
 | Name  | Description | Constrains
-| ===== | =============== | =======
+| ----  | ----------- | ---------
 | `transfer` | Move of coints from **n** number of input addresses to **m** number of output addresses | Sum of inputs *MUST* be equal or greater than sum of outputs
 | `reward` | Is given for mining successful POW block | Sum of outputs must me equal to `100`
 | `interest` | Is given for stake used to successful creation of POW block | Sum of outputs must be equal to 

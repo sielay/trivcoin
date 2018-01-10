@@ -215,6 +215,23 @@ crypto
 
 ### Block Creation
 
+#### Genesis Block
+
+```javascript
+{
+    "index: 0,
+    "parent: "0",
+    "pow": 262048,
+    "timestamp": 1465900260,
+    "transactions": [],
+    "hash": "blyAmtm8HW9u5eqPKGTZyAeRP6GtBT7d5sBg5i4bpB8="
+}
+```
+
+This block may change
+
+*IMPORTANT* Chain is not yet started! There are no other blocks and before this message is removed no blocks would be accepted.
+
 ### POW
 
 ### POS

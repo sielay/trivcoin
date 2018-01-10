@@ -219,7 +219,7 @@ crypto
 
 ```javascript
 {
-    "index: 0,
+    "index": 0,
     "parent: "0",
     "pow": 262048,
     "timestamp": 1465900260,
@@ -233,6 +233,31 @@ This block may change
 *IMPORTANT* Chain is not yet started! There are no other blocks and before this message is removed no blocks would be accepted.
 
 ### POW
+
+Proof of Work complexity is semi-constant, as algorithm does not change and variety is pseudo-random.
+
+For Proof of Work `int POW >= 0`, previous block Proof of Work `int PPOW >= 0` (equal to `0` for block -1), current [block hash](#block-hash) `hash` current block `int timestamp`; Proof of Work hash is result of function `f(PPOW, POW, hash, timestamp) => X11(CONCAT(PPOW, POW, hash, timestamp))`.
+
+Proof fo Work is valid when first four characters of this hash are equal to first digit of `PPOW`.
+
+In example:
+
+```
+PPOW = 3456
+
+f(PPOW, POW, hash, timestamp) = 3333XXXXXXXXXXXXXXX // valid
+f(PPOW, POW, hash, timestamp) = 333XXXXXXXXXXXXXXXX // invalid
+f(PPOW, POW, hash, timestamp) = X3333XXXXXXXXXXXXXX // invalid
+```
+
+JavaScript implementation of `checker` function and 
+
+```javascript
+const validProof = (ppow, pow, hash, timestamp) => 
+  x11.digest(ppow + "" + pow + hash + timestamp), pow).substr(0, 4) 
+  === (ppow.toFixed(0)[0] + ppow.toFixed(0)[0] + ppow.toFixed(0)[0] + ppow.toFixed(0)[0]);
+  
+```
 
 ### POS
 

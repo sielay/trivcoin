@@ -220,11 +220,11 @@ crypto
 ```javascript
 {
     "index": 0,
-    "parent: "0",
-    "pow": 262048,
+    "parent": "0",
     "timestamp": 1465900260,
+    "pow": 149957,
     "transactions": [],
-    "hash": "blyAmtm8HW9u5eqPKGTZyAeRP6GtBT7d5sBg5i4bpB8="
+    "hash": "GNyvMUzLQzb/x1ZsB6I+BKnwIxo6KTG6hCzEjID/qE8="
 }
 ```
 

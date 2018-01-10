@@ -32,6 +32,49 @@ We wanted to establish protocol that helps us:
  * [Dash](https://dashpay.atlassian.net/wiki/spaces/DOC/pages/1146918/X11) foe X11 hashes
  * [BlackCoin](https://bitcointalk.org/index.php?topic=469640.0) for economics and rollout ideas
 
+## Economics
+
+### Coin creation
+
+ * TrivCoins are being created while mining
+   * PoW will last as long nodes will find it worth mining
+   * Reward is 100 TrivCoin per block
+   * Reward can be disabled/enabled by vote of the network
+ * TrivCoins are created from interest billed weekly (7days) on 6% APR
+   * Stake needs to be deposited for 7 continous days to earn interest
+   * Interest can be disabled/enabled by vote of the network
+
+```javascript
+const reward = Math.floor((7 * STAKE * 5%)/365)
+```
+
+Days |	1,000 |	10,000	| 100,000 |	1,000,000
+==== | ====== | ======= | ======= | =========
+7	   | 1	    | 11	    | 115	    | 1,150 
+14	 | 2	    | 23      |	230	    | 2,301
+21	 | 3	    | 34	    | 345	    | 3,452
+105	 | 17	    | 172	    | 1,726	  | 17,260
+203	 | 33	    | 333	    | 3,336	  | 33,369
+301  | 49	    | 494     | 4,947	  | 49,479
+364	 | 59	    | 598	    | 5,983	  | 59,835   
+
+### Coin disposal
+
+ * Coins are *ereased* as penality
+ * Node voting for two competing blocks loses it *whole stake* used to vote
+ * Node voting for two competing chains (TBD - need to understand how Casper does it)
+
+### Value sources
+
+ * Demand on data
+ * Effort to find data 
+ * Value of data harvested
+ * Fiat and Altcoin exchanges
+
+### Security from economics
+
+ * See [Coin disposal](#coin-disposal).
+
 ## Technical Specification
 
 ### Structure
@@ -154,7 +197,7 @@ Example based on [NaiveCoin](https://github.com/conradoqg/naivecoin#block-struct
 }
 ```
 
-#### Bloch hash
+#### Block hash
 
 ```javascript
 crypto

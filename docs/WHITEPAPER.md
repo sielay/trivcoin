@@ -253,10 +253,11 @@ f(PPOW, POW, hash, timestamp) = X3333XXXXXXXXXXXXXX // invalid
 JavaScript implementation of `checker` function and 
 
 ```javascript
-const validProof = (ppow, pow, hash, timestamp) => 
-  x11.digest(ppow + "" + pow + hash + timestamp), pow).substr(0, 4) 
-  === (ppow.toFixed(0)[0] + ppow.toFixed(0)[0] + ppow.toFixed(0)[0] + ppow.toFixed(0)[0]);
-  
+const validProof = (ppow, pow, hash, timestamp) => {
+  const x11hash = x11.digest(ppow + "" + pow + hash + timestamp), pow);
+  const seek = ppow.toFixed(0)[0].repeat(4);
+  return (x11hash.substr(0, 4) === seek) && (pow % 2 === 0);
+} 
 ```
 
 ### POS

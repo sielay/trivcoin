@@ -1,12 +1,12 @@
 {
   "name": "trivcoin",
-  "version": "0.0.1-rc.3",
+  "version": "0.0.1-rc.4",
   "licence": "MIT",
   "author": {
     "name": "Łukasz Marek Sielski",
     "email": "lukaszsielski@gmail.com",
     "url": "https://github.com/sielay"
-  },  
+  },
   "dependencies": {
     "colors": "^1.1.2",
     "commander": "^2.12.2",
@@ -14,12 +14,11 @@
     "jasmine": "^2.8.0",
     "prompt": "^1.0.0",
     "swagger-ui-express": "^2.0.13",
-    "ursa": "^0.9.4",
     "x11-hash-js": "^1.0.0"
   },
   "repository": {
-  "type": "git",
-  "url": "git@github.com:sielay/trivcoin.git"    
+    "type": "git",
+    "url": "git@github.com:sielay/trivcoin.git"
   },
   "main": "lib/index.js",
   "bin": "bin/trivcoin",
@@ -31,6 +30,6 @@
     "statuses": "1.4.0"
   },
   "scripts": {
-    "test" : "node --harmony node_modules/jasmine/bin/jasmine **/*.spec.js"
+    "test": "node --harmony node_modules/jasmine/bin/jasmine **/*.spec.js"
   }
 }

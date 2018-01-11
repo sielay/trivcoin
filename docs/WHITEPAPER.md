@@ -238,7 +238,7 @@ Proof of Work complexity is semi-constant, as algorithm does not change and vari
 
 For Proof of Work `int POW >= 0`, previous block Proof of Work `int PPOW >= 0` (equal to `0` for block -1), current [block hash](#block-hash) `hash` current block `int timestamp`; Proof of Work hash is result of function `f(PPOW, POW, hash, timestamp) => X11(CONCAT(PPOW, POW, hash, timestamp))`.
 
-Proof fo Work is valid when first four characters of this hash are equal to first digit of `PPOW`.
+Proof fo Work is valid when first four characters of this hash are equal to first digit of `PPOW` and is dividable by 2 (`POW % 2 === 0`)
 
 In example:
 

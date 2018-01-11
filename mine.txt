@@ -1,0 +1,41 @@
+Started
+..
+BLOCK
+ {"index":2,"parent":"nxG0Z2KufMaCQWWRCO1RPMva/XXzQ49d+mUkfTBDbtI=","timestamp":1515629752,"pow":44036,"transactions":[{"id":"139fb5d4eb9efb138dbec21be6666c05f397a42fa0167c08acf13a72b3bc5c79","type":"reward","timestamp":1515629706,"data":{"inputs":[],"outputs":[{"address":"062ed7f90244324218c37a2b3bbcb8e43d9b711bae3db471d6a82af649dfa13f","amount":100}]},"hash":"5409a7820b9475adaac117e24a8f31c38a7f663bf6e3f900abe543dc68f1f580"}],"hash":"k+1JL7Zog8vp1yA7TFVGLR0zr4oE/i/G1baAaM11EeA="}
+
+
+
+BLOCK
+ {"index":3,"parent":"k+1JL7Zog8vp1yA7TFVGLR0zr4oE/i/G1baAaM11EeA=","timestamp":1515629893,"pow":82182,"transactions":[{"id":"bee66fef6cf404c5c31c05a356f8103330c048b1ccc282c71b483e273d90c939","type":"reward","timestamp":1515629813,"data":{"inputs":[],"outputs":[{"address":"062ed7f90244324218c37a2b3bbcb8e43d9b711bae3db471d6a82af649dfa13f","amount":100}]},"hash":"86340fa9398a936e109df950ce61a69e67756487f84e16237032d81b26d8a319"}],"hash":"YI059dFs8RZeeddtUNZ07TbF6TaIQDjSStt3R688P4U="}
+
+
+
+BLOCK
+ {"index":4,"parent":"YI059dFs8RZeeddtUNZ07TbF6TaIQDjSStt3R688P4U=","timestamp":1515630421,"pow":485182,"transactions":[{"id":"59db4faa35c9712afe57760528b6adc82c01df85d06566f67d2c4b89dcdf3918","type":"reward","timestamp":1515629954,"data":{"inputs":[],"outputs":[{"address":"062ed7f90244324218c37a2b3bbcb8e43d9b711bae3db471d6a82af649dfa13f","amount":100}]},"hash":"ec1f25091822ecdfec11194808733a8466979f69ad300df478cc14202ff503a0"}],"hash":"kuWxENXCf9Qm6t8NYMpFOAtYyTpnavKDFuSuXrnw1js="}
+
+
+
+BLOCK
+ {"index":5,"parent":"kuWxENXCf9Qm6t8NYMpFOAtYyTpnavKDFuSuXrnw1js=","timestamp":1515630574,"pow":95646,"transactions":[{"id":"1420f1764f9079bbf9c74667c89db090d0fd195ff4932dc264ba77716e312c8a","type":"reward","timestamp":1515630482,"data":{"inputs":[],"outputs":[{"address":"062ed7f90244324218c37a2b3bbcb8e43d9b711bae3db471d6a82af649dfa13f","amount":100}]},"hash":"e313a7ab047077f77d32ac329953e6c2f02089f547a89bc5b24eb1cda4405b89"}],"hash":"93R8CbIURu9tGB5QHhdNcEWETajf4oHabNqbEpn8N7w="}
+
+
+
+BLOCK
+ {"index":6,"parent":"93R8CbIURu9tGB5QHhdNcEWETajf4oHabNqbEpn8N7w=","timestamp":1515630719,"pow":86760,"transactions":[{"id":"b797d0b4ae6e4e1b2d786f342bef13ae7aa1772599c95f5cf1b1e27badcdcc35","type":"reward","timestamp":1515630635,"data":{"inputs":[],"outputs":[{"address":"062ed7f90244324218c37a2b3bbcb8e43d9b711bae3db471d6a82af649dfa13f","amount":100}]},"hash":"62ccbbf8a07916e1f4c9b88ccfdbb3de2283d7ce58238ddd87ce044f16599a42"}],"hash":"HgEC8DY/X1xWHbaOp0zlwvPfRQVSR7Y7oQwSg88y0BU="}
+
+
+
+BLOCK
+ {"index":7,"parent":"HgEC8DY/X1xWHbaOp0zlwvPfRQVSR7Y7oQwSg88y0BU=","timestamp":1515630838,"pow":60780,"transactions":[{"id":"8f43b3dafc105b90fef8970cf4b54937e0ab4dcc76d2959486e9d24a40499f45","type":"reward","timestamp":1515630780,"data":{"inputs":[],"outputs":[{"address":"062ed7f90244324218c37a2b3bbcb8e43d9b711bae3db471d6a82af649dfa13f","amount":100}]},"hash":"3d6583ec5aaef0cfc06ecd52e5cf7de1e5dfa5b30bcfb29acb778b5876f619c9"}],"hash":"O7lhm08OGrf8s0azdkWiQZJx2hltzxxMbqb0Qsxu6rU="}
+
+
+
+BLOCK
+ {"index":8,"parent":"O7lhm08OGrf8s0azdkWiQZJx2hltzxxMbqb0Qsxu6rU=","timestamp":1515630900,"pow":1020,"transactions":[{"id":"1d2fe34e333b2a8a9d6f7228fb9c71d72e02cae55fde4f300fd8b225b124636a","type":"reward","timestamp":1515630899,"data":{"inputs":[],"outputs":[{"address":"062ed7f90244324218c37a2b3bbcb8e43d9b711bae3db471d6a82af649dfa13f","amount":100}]},"hash":"105f3f65110484319eb7c1ddd95e278bae34cb274970f4bc55aacb46a31729a8"}],"hash":"u2/CX0HZZYaaSr14NXgxQ+WFH1u22BDOBORu40ZHKq0="}
+
+
+
+BLOCK
+ {"index":9,"parent":"u2/CX0HZZYaaSr14NXgxQ+WFH1u22BDOBORu40ZHKq0=","timestamp":1515631123,"pow":164408,"transactions":[{"id":"4330dad2f77eecc4b53784e7c1fbc293739557e19f2c4984985279ec53f99164","type":"reward","timestamp":1515630961,"data":{"inputs":[],"outputs":[{"address":"062ed7f90244324218c37a2b3bbcb8e43d9b711bae3db471d6a82af649dfa13f","amount":100}]},"hash":"16287e2c5a48e58d3b336d84b00c58b24c3efd56bd0e42e143de1ef6154e23bb"}],"hash":"9Dap5rDcvrwOY3nrGb6gVHhag5kc/iIjTXXF8qGvtIc="}
+
+

@@ -128,9 +128,125 @@ Days |	1,000 |	10,000	| 100,000 |	1,000,000
  * Supplier can be banned or penalised for suppliying false data update
  * Supplier can be banned or penalised for unfair voting (voting for same change against two other suppliers, against himself or his address or, or pro and against same data change)
 
+### Communication
+
+Communication happens as *PUSH* from any entity in the network to Node (so can be from Node to Node). All commands *MUST* be supported by each Node.
+
+### Transports supported
+
+ * Nodes can communicate via RPC-like way using various protocols
+   * Https
+     * flag `https`
+     * POST method
+     * Request and response are of `Content-Type=application/json`
+     * GET REST-like requests are possible for caching purposes (but discouraged because same reason)
+   * WebSockets
+     * TBD
+     * flag `wss:PORT`
+   * TCP
+     * TBD
+     * Secured with TLS
+     * flag `tcp:PORT`
+
+### Request format
+```
+{
+    "timestamp": 12345,
+    "from": {
+        "host": "node1.trivcoin.com",
+        "accepts": ["https"], // https, wss, etc.
+        "address": "abcdef0123456789"     
+    },
+    "requestId": "someRandomHash",
+    "cmd": ["blocks.oneByIndex", 12]
+}
+```
+
+### Response format
+```
+{
+    "timestamp": 12345,
+    "from": {
+        "host": "node2.trivcoin.com",        
+        "accepts": ["https", "wss:3003" ], // https, wss, etc.
+        "address": "0123456789avcdef"     
+    },
+    "requestId": "someRandomHashFromRequest",
+    "error": {
+        "code": 1,
+        "message": "hello"
+    },
+    "data": {
+        ...
+    }
+}
+```
+
+### Output
+
+Output describes how much coins will be transfered to which wallet.
+
+Field   | Type    | Required | Description
+------- | ------- | -------- | -----------
+address | string  | yes      | Public key of wallet that coins should be transfered to
+amount  | integer | yes      | Amount of coins that should be transfered
+
+### Input
+
+Input described which previously existing Output is consumed by this transaction.
+
+Field       | Type    | Required | Description
+----------- | ------- | -------- | -----------
+address     | string  | yes      | Address taken from Ouput used being source of this Input
+amount      | integer | yes      | Amount of coins that should be transfered
+transaction | string  | yes      | ID of transaction where source Output comes from
+index       | integer | yes      | Index of Output used to create this input in referred source transaction
+signature   | string  | yes      | `ed25519` signature of `input.transaction + input.address + input.index.toFixed(0) + input.amount.toFixed(0)`
+
+Signature is being created using private key that correspend to address (which is public key of the same wallet).
+
+#### Example
+
+```
+
+BLOCK[n - 1].transactions[k].id = C
+BLOCK[n - 1].transactions[k].outputs = [
+    {
+        address: A
+        amount: 100
+    }m
+    {
+        address: B
+        amount: 100
+    }m
+    ...
+]
+
+
+BLOCK[n].transactions[l].inputs = [
+    {
+        address: B
+        amount: 100
+        transaction: C
+        index: 1
+        signature: ...
+    },
+    ....
+]
+```
+
 ### Transaction
 
-### Format
+### Properties
+
+Field | Type | Required | Description
+----- | ---- | -------- | -----------
+id    | stirng | Y | random id (64 bytes)
+hash  | string | 
+
+
+
+### JSON
 
 Example based on [NaiveCoin](https://github.com/conradoqg/naivecoin#transaction-structure) with further amendments
 
@@ -176,6 +292,22 @@ Example based on [NaiveCoin](https://github.com/conradoqg/naivecoin#transaction-
 | `order` |
 | `vote` |
 
+
+### API
+
+RPC Command | HTTPS endpoint       | Description
+----------- | -------------------- | ----------------------------------
+trans.new   | transaction/new      | Broadcast new transaction
+trans.stat  | transaction/status   | Fetch transaction status
+trans.queue | transactions/queue   | Fetch list of pending transactions
+
+#### trans.new
+
+#### Request
+
+Payload 
+
+#### Response
 
 
 ### Block
@@ -265,5 +397,3 @@ const validProof = (ppow, pow, hash, timestamp) => {
 ### Consensus
 
 ### Voting
-
-

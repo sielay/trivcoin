@@ -1,6 +1,6 @@
 {
   "name": "trivcoin",
-  "version": "0.0.1-rc.14",
+  "version": "0.0.1-rc.15",
   "licence": "MIT",
   "author": {
     "name": "Łukasz Marek Sielski",
@@ -13,6 +13,7 @@
     "ed25519": "^0.0.4",
     "jasmine": "^2.8.0",
     "prompt": "^1.0.0",
+    "request": "^2.83.0",
     "swagger-ui-express": "^2.0.13",
     "x11-hash-js": "^1.0.0"
   },
@@ -27,7 +28,9 @@
     "pkginfo": "0.4.1",
     "async": "1.0.0",
     "setprototypeof": "1.1.0",
-    "statuses": "1.4.0"
+    "statuses": "1.4.0",
+    "boom": "5.2.0",
+    "extsprintf": "1.4.0"
   },
   "scripts": {
     "test": "node --harmony node_modules/jasmine/bin/jasmine **/*.spec.js"

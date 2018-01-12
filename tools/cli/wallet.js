@@ -203,7 +203,7 @@ Commands:
    wallet init
    wallet ls
    wallet add
-   wallet remote [index]
+   wallet remove [index]
 `
                 );
                 break;

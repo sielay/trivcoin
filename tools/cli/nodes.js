@@ -102,7 +102,10 @@ function post(node, cmd, args, debug) {
                 if (!error && response.statusCode == 200) {
                     return resolve(body.data);
                 }
-                reject(error);
+                if (error) {
+                    return reject(error);
+                }
+                reject(body);
             }
         );
     })
@@ -166,7 +169,7 @@ module.exports = (command, options) => {
                         start: options.start,
                         end: options.end
                     }], options.debug)
-                        .then(data => console.log(data), err => console.error(err, colors.red(err)));
+                        .then(data => console.log(data), err => console.error(colors.red(err.message)));
                 });
             break;
         }

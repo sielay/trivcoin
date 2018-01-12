@@ -167,7 +167,7 @@ module.exports = (command, options) => {
                 .then(node => {
                     post(node, "blocks.get", [{
                         start: options.start,
-                        end: options.end
+                        length: options.length
                     }], options.debug)
                         .then(data => console.log(data), err => console.error(colors.red(err.message)));
                 });

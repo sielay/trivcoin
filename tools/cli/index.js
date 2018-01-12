@@ -20,7 +20,7 @@ program
     .option("-n --node [index]", "index of node to use")
     .option("-u --url [url]", "url of node to use")
     .option("-s --start [start]")
-    .option("-e --end [end]")
+    .option("-l --length [length]")
     .option("-b --b [body]")
     .option("-d --debug")
     .description('Nodes setup')

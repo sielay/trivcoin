@@ -22,6 +22,7 @@ program
     .option("-s --start [start]")
     .option("-e --end [end]")
     .option("-b --b [body]")
+    .option("-d --debug")
     .description('Nodes setup')
     .action(function (cmd, options) {
         nodes(cmd, options);

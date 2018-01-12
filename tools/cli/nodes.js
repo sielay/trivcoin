@@ -65,23 +65,40 @@ function getNode(index, url) {
         });
 }
 
-function post(node, cmd, args) {
+function post(node, cmd, args, debug) {
+
+    const json = {
+        "timestamp": Math.round(Date.now() / 1000),
+        "from": {
+            "host": "client",
+            "accepts": [], // https, wss, etc.
+            "address": null
+        },
+        "requestId": "TBD",
+        "cmd": [cmd, ...args]
+    };
+
+    if (debug) {
+        console.log("-".repeat(10))
+        console.log("REQUEST", node);
+        console.log(JSON.stringify(json, null, 4));
+        console.log("=".repeat(10))
+    }
+
     return new Promise((resolve, reject) => {
         request.post(
             node,
             {
-                json: {
-                    "timestamp": Math.round(Date.now() / 1000),
-                    "from": {
-                        "host": "client",
-                        "accepts": [], // https, wss, etc.
-                        "address": null
-                    },
-                    "requestId": "TBD",
-                    "cmd": [cmd, ...args]
-                }
+                json
             },
             function (error, response, body) {
+                if (debug) {
+                    console.log("-".repeat(10))
+                    console.log("RESPONSE", response.statusCode);
+                    console.log(JSON.stringify(body, null, 4));
+                    console.log("=".repeat(10))
+                }
+
                 if (!error && response.statusCode == 200) {
                     return resolve(body.data);
                 }
@@ -129,7 +146,7 @@ module.exports = (command, options) => {
         case "blocks.head": {
             getNode(options.node, options.url)
                 .then(node => {
-                    post(node, "blocks.head", [])
+                    post(node, "blocks.head", [], options.debug)
                         .then(data => console.log(data), err => console.error(colors.red(err)));
                 });
             break;
@@ -137,7 +154,7 @@ module.exports = (command, options) => {
         case "blocks.length": {
             getNode(options.node, options.url)
                 .then(node => {
-                    post(node, "blocks.length", [])
+                    post(node, "blocks.length", [], options.debug)
                         .then(data => console.log(data), err => console.error(err, colors.red(err)));
                 });
             break;
@@ -148,7 +165,7 @@ module.exports = (command, options) => {
                     post(node, "blocks.get", [{
                         start: options.start,
                         end: options.end
-                    }])
+                    }], options.debug)
                         .then(data => console.log(data), err => console.error(err, colors.red(err)));
                 });
             break;

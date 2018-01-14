@@ -4,32 +4,32 @@ const wallet = require("./wallet");
 const nodes = require("./nodes");
 
 program
-    .version('0.1.0');
+    .version("0.1.0");
 
 program
-    .command('wallet [cmd]')
-    .alias('w')
-    .description('Wallet operations')
-    .action(function (cmd, options) {
+    .command("wallet [cmd]")
+    .alias("w")
+    .description("Wallet operations")
+    .action((cmd, options) => {
         wallet(cmd, options);
     });
 
 program
     .command("nodes [cmd]")
-    .alias('n')
+    .alias("n")
     .option("-n --node [index]", "index of node to use")
     .option("-u --url [url]", "url of node to use")
     .option("-s --start [start]")
     .option("-l --length [length]")
     .option("-b --b [body]")
     .option("-d --debug")
-    .description('Nodes setup')
-    .action(function (cmd, options) {
+    .description("Nodes setup")
+    .action((cmd, options) => {
         nodes(cmd, options);
     });
 
 program
-    .command('*')
+    .command("*")
     .action(() => program.help());
 
 program.parse(process.argv);

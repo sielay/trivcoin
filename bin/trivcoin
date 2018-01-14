@@ -1,2 +1,2 @@
 #!/usr/bin/env node --harmony
-require(__dirname + "/../tools/cli/index");
+require("../tools/cli/index");
